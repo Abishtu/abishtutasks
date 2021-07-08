@@ -6,6 +6,8 @@ abishtutasks_sources = [
     'widgets/TaskCard/ColourBar.vala',
     'widgets/TaskCard/TaskCardText.vala',
     'widgets/TaskCard/TaskCardButton.vala',
+    'widgets/NewTaskWindow/Window.vala',
+    'widgets/NewTaskWindow/Title.vala',
 ]
 
 abishtutasks_deps = [

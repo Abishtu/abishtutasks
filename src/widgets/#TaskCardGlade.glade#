@@ -227,6 +227,85 @@
       </packing>
     </child>
   </object>
+  <object class="GtkWindow">
+    <property name="can-focus">False</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <child>
+          <placeholder/>
+        </child>
+        <child>
+          <object class="GtkRevealer">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkListBox">
+                <property name="width-request">200</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <child type="placeholder">
+                  <object class="GtkBox">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="orientation">vertical</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">label</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">label</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="label" translatable="yes">label</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="position">2</property>
+                      </packing>
+                    </child>
+                  </object>
+                </child>
+                <style>
+                  <class name="list"/>
+                </style>
+              </object>
+            </child>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <placeholder/>
+        </child>
+      </object>
+    </child>
+  </object>
   <object class="GtkEntryCompletion" id="entrycompletion1"/>
   <object class="GtkWindow" id="CreateNewTaskWindow">
     <property name="name">CreateNewTaskWindow</property>
@@ -265,6 +344,7 @@
                     <property name="can-focus">False</property>
                     <property name="halign">start</property>
                     <property name="valign">center</property>
+                    <property name="margin-start">7</property>
                     <property name="hexpand">True</property>
                     <property name="label" translatable="yes">Title</property>
                     <style>
@@ -274,7 +354,6 @@
                   <packing>
                     <property name="expand">True</property>
                     <property name="fill">True</property>
-                    <property name="padding">7</property>
                     <property name="position">0</property>
                   </packing>
                 </child>

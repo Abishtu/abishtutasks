@@ -2,6 +2,7 @@
 <!-- Generated with glade 3.38.2 -->
 <interface>
   <requires lib="gtk+" version="3.24"/>
+  <requires lib="gtksourceview" version="4.0"/>
   <object class="GtkApplicationWindow" id="AbsituTaskAppWindow">
     <property name="can-focus">False</property>
     <child>
@@ -50,6 +51,9 @@
                 <property name="visible">True</property>
                 <property name="can-focus">False</property>
                 <property name="vexpand">True</property>
+                <style>
+                  <class name="frame"/>
+                </style>
               </object>
               <packing>
                 <property name="expand">False</property>
@@ -146,6 +150,9 @@
         <property name="visible">True</property>
         <property name="can-focus">False</property>
         <property name="vexpand">True</property>
+        <style>
+          <class name="frame"/>
+        </style>
       </object>
       <packing>
         <property name="expand">False</property>
@@ -218,6 +225,284 @@
         <property name="fill">True</property>
         <property name="position">1</property>
       </packing>
+    </child>
+  </object>
+  <object class="GtkEntryCompletion" id="entrycompletion1"/>
+  <object class="GtkWindow" id="CreateNewTaskWindow">
+    <property name="name">CreateNewTaskWindow</property>
+    <property name="can-focus">False</property>
+    <property name="window-position">center</property>
+    <property name="destroy-with-parent">True</property>
+    <property name="gravity">center</property>
+    <child>
+      <object class="GtkBox">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="halign">center</property>
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkListBox" id="TaskTitleOption">
+            <property name="width-request">300</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">20</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <child type="placeholder">
+              <object class="GtkBox">
+                <property name="width-request">300</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="double-buffered">False</property>
+                <property name="margin-top">10</property>
+                <property name="margin-bottom">10</property>
+                <child>
+                  <object class="GtkLabel">
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="halign">start</property>
+                    <property name="valign">center</property>
+                    <property name="margin-start">7</property>
+                    <property name="hexpand">True</property>
+                    <property name="label" translatable="yes">Title</property>
+                    <style>
+                      <class name="title"/>
+                    </style>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkEntry">
+                    <property name="visible">True</property>
+                    <property name="can-focus">True</property>
+                    <property name="halign">end</property>
+                    <property name="valign">center</property>
+                    <property name="margin-right">7</property>
+                    <property name="hexpand">True</property>
+                    <property name="completion">entrycompletion1</property>
+                    <property name="show-emoji-icon">True</property>
+                    <property name="enable-emoji-completion">True</property>
+                  </object>
+                  <packing>
+                    <property name="expand">True</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <style>
+              <class name="frame"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">0</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkListBox" id="StartEndDate">
+            <property name="width-request">300</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">20</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <child type="placeholder">
+              <object class="GtkBox">
+                <property name="width-request">200</property>
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="hexpand">True</property>
+                <property name="vexpand">True</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <object class="GtkBox">
+                    <property name="width-request">300</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="valign">center</property>
+                        <property name="label" translatable="yes">Starts</property>
+                        <style>
+                          <class name="title"/>
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">7</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="halign">end</property>
+                        <property name="valign">center</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">7</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">0</property>
+                  </packing>
+                </child>
+                <child>
+                  <object class="GtkBox">
+                    <property name="width-request">300</property>
+                    <property name="visible">True</property>
+                    <property name="can-focus">False</property>
+                    <property name="margin-top">10</property>
+                    <property name="margin-bottom">10</property>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="visible">True</property>
+                        <property name="can-focus">False</property>
+                        <property name="halign">start</property>
+                        <property name="valign">center</property>
+                        <property name="label" translatable="yes">Ends</property>
+                        <style>
+                          <class name="title"/>
+                        </style>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">7</property>
+                        <property name="position">0</property>
+                      </packing>
+                    </child>
+                    <child>
+                      <object class="GtkEntry">
+                        <property name="visible">True</property>
+                        <property name="can-focus">True</property>
+                        <property name="halign">end</property>
+                        <property name="valign">center</property>
+                      </object>
+                      <packing>
+                        <property name="expand">True</property>
+                        <property name="fill">True</property>
+                        <property name="padding">7</property>
+                        <property name="position">1</property>
+                      </packing>
+                    </child>
+                  </object>
+                  <packing>
+                    <property name="expand">False</property>
+                    <property name="fill">True</property>
+                    <property name="position">1</property>
+                  </packing>
+                </child>
+              </object>
+            </child>
+            <style>
+              <class name="frame"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">1</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkListBox" id="TaskDescription">
+            <property name="width-request">300</property>
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <property name="margin-top">10</property>
+            <property name="margin-bottom">20</property>
+            <property name="hexpand">True</property>
+            <property name="vexpand">False</property>
+            <child type="placeholder">
+              <object class="GtkSourceView">
+                <property name="visible">True</property>
+                <property name="can-focus">True</property>
+                <property name="left-margin">2</property>
+                <property name="right-margin">2</property>
+                <style>
+                  <class name="view"/>
+                </style>
+              </object>
+            </child>
+            <style>
+              <class name="frame"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">True</property>
+            <property name="position">2</property>
+          </packing>
+        </child>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">Done</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">end</property>
+            <property name="valign">center</property>
+            <style>
+              <class name="suggested-action"/>
+            </style>
+          </object>
+          <packing>
+            <property name="expand">False</property>
+            <property name="fill">False</property>
+            <property name="position">3</property>
+          </packing>
+        </child>
+      </object>
+    </child>
+    <child type="titlebar">
+      <object class="GtkHeaderBar">
+        <property name="visible">True</property>
+        <property name="can-focus">False</property>
+        <property name="title" translatable="yes">Create Task</property>
+        <property name="show-close-button">True</property>
+        <child>
+          <object class="GtkButton">
+            <property name="label" translatable="yes">Cancel</property>
+            <property name="visible">True</property>
+            <property name="can-focus">True</property>
+            <property name="receives-default">True</property>
+            <property name="halign">center</property>
+            <property name="valign">center</property>
+            <style>
+              <class name="destructive-action"/>
+            </style>
+          </object>
+        </child>
+      </object>
     </child>
   </object>
 </interface>

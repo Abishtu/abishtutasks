@@ -8,10 +8,13 @@ public class AbishtuTasks.Window : Gtk.ApplicationWindow {
     public Gtk.Box mainWidgetContainer = new Gtk.Box(Gtk.Orientation.VERTICAL, 5);
     public Gtk.ScrolledWindow scrollWindow = new Gtk.ScrolledWindow();
 
+    private Gtk.Application thisApp;
+
     public Window(Gtk.Application app) {
         Object(
             application: app
         );
+        thisApp = app;
     }
     private void createHeaderBar() {
 
@@ -21,9 +24,7 @@ public class AbishtuTasks.Window : Gtk.ApplicationWindow {
         newTaskButton.set_valign(Gtk.Align.CENTER);
         newTaskButton.get_style_context().add_class("suggested-action");
         newTaskButton.clicked.connect(() => {
-            taskCards.foreach((taskCard) => {
-                taskCard.taskColourBar.activateDraw(1, 2, 0, 1);
-            });
+            var makeTask = new AbishtuTasks.NewTaskWindow.Window();
         });
         
         headerBar.pack_start(newTaskButton);
